@@ -1,5 +1,7 @@
 import React from "react";
 import MovieCard from "./MovieCard";
+import DotLineLoader from "../components/DotLineLoader";
+
 
 interface MovieListProps {
   movies: { imdbID: string; Title: string; Year: string; Poster: string }[];
@@ -8,7 +10,9 @@ interface MovieListProps {
 
 const MovieList: React.FC<MovieListProps> = ({ movies, loading }) => {
   if (loading) {
-    return <div className="text-center">Loading...</div>;
+    return <div className="flex justify-center item-center">
+      <DotLineLoader />
+    </div>;
   }
 
   if (movies.length === 0) {
