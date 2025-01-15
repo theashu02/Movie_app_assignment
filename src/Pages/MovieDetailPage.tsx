@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getMovieDetails } from "../api/movieApi";
+import LoadingPage from "./LoadingPage";
 
 const MovieDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -27,7 +28,8 @@ const MovieDetailPage: React.FC = () => {
   }, [id]);
 
   if (loading) {
-    return <div className="text-center">Loading...</div>;
+    // return <div className="text-center">Loading...</div>;
+    return <LoadingPage />
   }
 
   if (error) {

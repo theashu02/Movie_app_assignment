@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { RxCross2 } from "react-icons/rx";
+// import { RxCross2 } from "react-icons/rx";
 // import { FaSearch } from "react-icons/fa";
 import { Input } from "../components/ui/input";
 
@@ -17,10 +17,10 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     onSearch(newQuery);
   };
 
-  const handleClear = () => {
-    setQuery("");
-    onSearch("");
-  };
+  // const handleClear = () => {
+  //   setQuery("");
+  //   onSearch("");
+  // };
 
   return (
     <div className="max-w-2xl mx-auto px-4 w-full">
@@ -31,14 +31,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
           ${isFocused ? "ring-2 ring-blue-500 shadow-lg" : "hover:shadow-lg"}
         `}
       >
-        {/* Search Icon */}
-        {/* <FaSearch
-          className={`
-            h-5 w-5 ml-4 transition-colors duration-200
-            ${isFocused ? "text-blue-500" : "text-gray-400"}
-          `}
-        /> */}
-
         {/* Search Input */}
         <Input
           type="text"
@@ -53,21 +45,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
             focus:outline-none
           "
         />
-
-        {query && (
-          <button
-            onClick={handleClear}
-            className="
-              p-2 mr-2 rounded-full
-              text-gray-400 hover:text-gray-600
-              hover:bg-gray-100
-              transition-colors duration-200
-            "
-            aria-label="Clear search"
-          >
-            <RxCross2 className="h-4 w-4" />
-          </button>
-        )}
       </div>
 
       {query && isFocused && (
