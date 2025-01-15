@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 /* ... */
+body {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
 
 @layer base {
   :root {

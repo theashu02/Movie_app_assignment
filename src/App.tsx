@@ -3,8 +3,23 @@ import Header from "./Pages/Header";
 import HomePage from "./Pages/HomePage";
 import MovieDetailPage from "./Pages/MovieDetailPage";
 import NotFoundPage from "./Pages/NotFoundPage";
+import { useState, useEffect } from "react";
+import LoadingPage from "./Pages/LoadingPage";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Adjust time as needed
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <LoadingPage />;
+  }
+
   return (
     <Router>
       <div className="min-h-screen bg-gray-100">
