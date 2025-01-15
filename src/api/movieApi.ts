@@ -1,9 +1,9 @@
-const API_KEY = "c7a1fd85";
+const str = "c7a1fd85";
 const BASE_URL = "https://www.omdbapi.com/";
 
 export const searchMovies = async (query: string) => {
   const response = await fetch(
-    `${BASE_URL}?apikey=${API_KEY}&s=${encodeURIComponent(query)}`
+    `${BASE_URL}?apikey=${str}&s=${encodeURIComponent(query)}`
   );
   if (!response.ok) {
     throw new Error("Failed to fetch movies");
@@ -16,7 +16,7 @@ export const searchMovies = async (query: string) => {
 };
 
 export const getMovieDetails = async (id: string) => {
-  const response = await fetch(`${BASE_URL}?apikey=${API_KEY}&i=${id}`);
+  const response = await fetch(`${BASE_URL}?apikey=${str}&i=${id}`);
   if (!response.ok) {
     throw new Error("Failed to fetch movie details");
   }

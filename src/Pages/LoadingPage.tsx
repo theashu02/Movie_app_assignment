@@ -1,4 +1,4 @@
-const LoadingPage = () => {
+export default function LoadingPage() {
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-200 dark:to-gray-300">
       {/* Main loading container */}
@@ -35,5 +35,3 @@ const LoadingPage = () => {
     </div>
   );
 };
-
-export default LoadingPage;

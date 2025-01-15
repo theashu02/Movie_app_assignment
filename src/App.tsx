@@ -5,6 +5,7 @@ import MovieDetailPage from "./Pages/MovieDetailPage";
 import NotFoundPage from "./Pages/NotFoundPage";
 import { useState, useEffect } from "react";
 import LoadingPage from "./Pages/LoadingPage";
+import { ThemeProvider } from "./components/theme-provider";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -21,18 +22,20 @@ function App() {
   }
 
   return (
-    <Router>
-      <div className="min-h-screen bg-gray-100">
-        <Header />
-        <main className="container mx-auto px-4 py-8">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/movie/:id" element={<MovieDetailPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </main>
-      </div>
-    </Router>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <Router>
+        <div className="min-h-screen bg-gray-100 dark:bg-[#1c1d25]">
+          <Header />
+          <main className="container mx-auto px-4 py-8">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/movie/:id" element={<MovieDetailPage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </main>
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 

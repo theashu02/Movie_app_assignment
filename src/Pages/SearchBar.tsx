@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-// import { RxCross2 } from "react-icons/rx";
-// import { FaSearch } from "react-icons/fa";
 import { Input } from "../components/ui/input";
 
 interface SearchBarProps {
@@ -40,44 +38,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           className="
-            w-full px-4 py-3 text-gray-700 
-            placeholder-gray-400 bg-transparent
+            w-full px-4 py-3 text-gray-700 dark:bg-[#2a2b35] dark:text-[#e0e0e0] dark:placeholder-[#6b6b6b]
+            placeholder-gray-400 bg-transparent dark:border-[#3a3b45] dark:focus:border-[#4a4b55] dark:focus:bg-[#3a3b45]
             focus:outline-none
           "
         />
       </div>
-
-      {query && isFocused && (
-        <div
-          className="
-          absolute mt-2 w-full max-w-2xl bg-white 
-          rounded-lg shadow-lg border border-gray-100
-          py-2 px-0 space-y-1 z-10
-        "
-        >
-          <div className="px-4 py-2 text-sm text-gray-500">
-            Try searching for...
-          </div>
-          <button
-            className="
-            w-full px-4 py-2 text-left text-sm
-            hover:bg-gray-50 text-gray-700
-            transition-colors duration-200
-          "
-          >
-            Popular Movies
-          </button>
-          <button
-            className="
-            w-full px-4 py-2 text-left text-sm
-            hover:bg-gray-50 text-gray-700
-            transition-colors duration-200
-          "
-          >
-            New Releases
-          </button>
-        </div>
-      )}
     </div>
   );
 };
