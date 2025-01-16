@@ -3,10 +3,26 @@ import { useParams } from "react-router-dom";
 import { getMovieDetails } from "../api/movieApi";
 import DotLineLoader from "../components/DotLineLoader";
 
+interface Movie {
+  Title: string;
+  Year: string;
+  Runtime: string;
+  Genre: string;
+  Plot: string;
+  Director: string;
+  Writer: string;
+  Actors: string;
+  Poster: string;
+  imdbRating: string;
+  imdbID: string;
+  Type: string;
+  Language: string;
+  Country: string;
+}
 
 const MovieDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const [movie, setMovie] = useState<any | null>(null);
+  const [movie, setMovie] = useState<Movie | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -41,13 +57,13 @@ const MovieDetailPage: React.FC = () => {
   }
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+    <div className="bg-[#f6f7f9] dark:bg-gray-800 rounded-lg shadow-md p-6">
       <div className="flex flex-col md:flex-row">
         <img
           src={
             movie.Poster !== "N/A"
               ? movie.Poster
-              : "https://via.placeholder.com/300x450?text=No+Poster"
+              : "https://placehold.co/300x450"
           }
           alt={movie.Title}
           className="w-full md:w-1/3 h-auto object-cover rounded-lg mb-4 md:mb-0 md:mr-6"
@@ -71,6 +87,12 @@ const MovieDetailPage: React.FC = () => {
           </p>
           <p className="text-gray-800 dark:text-gray-200 mb-2">
             <strong>IMDb Rating:</strong> {movie.imdbRating}
+          </p>
+          <p className="text-gray-800 dark:text-gray-200 mb-2">
+            <strong>Language:</strong> {movie.Language}
+          </p>
+          <p className="text-gray-800 dark:text-gray-200 mb-2">
+            <strong>Country:</strong> {movie.Country}
           </p>
         </div>
       </div>
