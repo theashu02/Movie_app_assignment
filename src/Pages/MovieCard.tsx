@@ -13,12 +13,12 @@ interface MovieCardProps {
 const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
   return (
     <Link to={`/movie/${movie.imdbID}`} className="block">
-      <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-600">
+      <div className="bg-[#f6f7f9] dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-600">
         <img
           src={
             movie.Poster !== "N/A"
               ? movie.Poster
-              : "https://via.placeholder.com/300x450?text=No+Poster"
+              : "https://placehold.co/300x450"
           }
           alt={movie.Title}
           className="w-full h-64 object-cover"

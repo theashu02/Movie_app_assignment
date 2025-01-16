@@ -1,19 +1,21 @@
 
 export default function NotFoundPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-[#ecedf2] p-4 dark:bg-[#1c1d25]">
       <div className="max-w-md w-full space-y-8 text-center">
         <div className="relative">
-          <h1 className="text-9xl font-extrabold text-gray-900 opacity-10">
+          <h1 className="text-9xl font-extrabold text-gray-900 dark:text-[#545a75] opacity-20 poppins-medium">
             404
           </h1>
           <div className="absolute inset-0 flex items-center justify-center">
-            <h2 className="text-4xl font-bold text-gray-800">Page Not Found</h2>
+            <h2 className="text-4xl font-bold text-gray-800 dark:text-gray-200 poppins-medium">
+              Page Not Found
+            </h2>
           </div>
         </div>
         <div className="my-8 animate-bounce">
           <svg
-            className="mx-auto h-24 w-24 text-gray-400"
+            className="mx-auto h-24 w-24 text-gray-500"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"

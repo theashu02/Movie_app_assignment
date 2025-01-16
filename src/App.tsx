@@ -24,7 +24,7 @@ function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <Router>
-        <div className="min-h-screen bg-gray-100 dark:bg-[#1c1d25]">
+        <div className="min-h-screen bg-[#ecedf2] dark:bg-[#1c1d25]">
           <Header />
           <main className="container mx-auto px-4 py-8">
             <Routes>
