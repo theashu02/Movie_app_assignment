@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getMovieDetails } from "../api/movieApi";
 import DotLineLoader from "./Loaders/DotLineLoader";
+import { Button } from "../components/ui/button";
+import { IoArrowBackSharp } from "react-icons/io5";
 
 interface Movie {
   Title: string;
@@ -21,11 +23,15 @@ interface Movie {
 }
 
 const MovieDetailPage: React.FC = () => {
+  const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const [movie, setMovie] = useState<Movie | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const handleBackClick = () => {
+    navigate('/');
+  };
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
@@ -57,7 +63,14 @@ const MovieDetailPage: React.FC = () => {
   }
 
   return (
-    <div className="bg-[#f6f7f9] dark:bg-gray-800 rounded-lg shadow-md p-6">
+    <div className="bg-[#ecedf2] dark:bg-[#1c1d25] p-6">
+      <Button
+        variant="outline"
+        onClick={handleBackClick}
+        className="fixed h-8 w-4 -ml-9 -mt-12 md:-mt-10 md:-ml-8 z-50 bg-[#ecedf2] text-gray-700 dark:bg-gray-800/60 backdrop-blur-sm border-gray-700 hover:bg-gray-300 transition-all duration-300 dark:text-gray-200 dark:hover:text-gray-400"
+      >
+        <IoArrowBackSharp />
+      </Button>
       <div className="flex flex-col md:flex-row">
         <img
           src={
