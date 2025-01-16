@@ -88,12 +88,12 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#ecedf2] text-gray-900 dark:bg-[#1c1d25] dark:text-gray-100">
-      <div className="text-gray-800 py-16 px-4 bg-[#ecedf2] dark:bg-[#1c1d25] dark:text-gray-200">
+      <div className="text-gray-800 py-8 px-4 bg-[#ecedf2] dark:bg-[#1c1d25] dark:text-gray-200">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-center mb-8">
             <Film className="h-20 w-20 md:h-12 md:w-12 mr-4" />
             <h1 className="text-4xl md:text-5xl font-bold text-center">
-              Discover Your Next Favorite Movie
+              Discover Movies
             </h1>
           </div>
 
