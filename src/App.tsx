@@ -4,7 +4,7 @@ import HomePage from "./Pages/HomePage";
 import MovieDetailPage from "./Pages/MovieDetailPage";
 import NotFoundPage from "./Pages/NotFoundPage";
 import { useState, useEffect } from "react";
-import LoadingPage from "./Pages/LoadingPage";
+import LoadingPage from "./Pages/Loaders/LoadingPage";
 import { ThemeProvider } from "./components/theme-provider";
 
 function App() {
@@ -12,8 +12,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // Adjust time as needed
-
+    }, 1200);
     return () => clearTimeout(timer);
   }, []);
 

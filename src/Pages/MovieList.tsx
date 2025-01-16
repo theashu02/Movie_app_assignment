@@ -1,6 +1,6 @@
 import React from "react";
 import MovieCard from "./MovieCard";
-import DotLineLoader from "../components/DotLineLoader";
+import DotLineLoader from "./Loaders/DotLineLoader";
 
 
 interface MovieListProps {
