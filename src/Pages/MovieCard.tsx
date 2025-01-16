@@ -24,7 +24,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
           className="w-full h-64 object-cover"
         />
         <div className="p-4">
-          <h2 className="text-lg font-semibold mb-2 truncate text-gray-900 dark:text-gray-100">
+          <h2 className="text-lg poppins-bold mb-2 truncate text-gray-900 dark:text-gray-100">
             {movie.Title}
           </h2>
           <p className="text-gray-600 dark:text-gray-400">{movie.Year}</p>

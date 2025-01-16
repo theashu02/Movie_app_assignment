@@ -1,10 +1,11 @@
 import React, { useState, useCallback, useEffect } from "react";
-import { debounce } from "lodash";
-import SearchBar from "./SearchBar";
-import MovieList from "./MovieList";
-import { searchMovies } from "../api/movieApi";
 import { Film, Loader, AlertCircle } from "lucide-react";
 import { Alert, AlertDescription } from "../components/ui/alert";
+import { debounce } from "lodash";
+import { searchMovies } from "../api/movieApi";
+import useNavigationStore from "../store/useNavigationStore";
+import SearchBar from "./SearchBar";
+import MovieList from "./MovieList";
 
 const HomePage: React.FC = () => {
   const [movies, setMovies] = useState<any[]>([]);
@@ -13,7 +14,8 @@ const HomePage: React.FC = () => {
   const [hasSearched, setHasSearched] = useState(false);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
-  const [query, setQuery] = useState<string>("");
+
+  const query = useNavigationStore((state) => state.query);
 
   const debouncedSearch = useCallback(
     debounce(async (searchQuery: string, searchPage: number) => {
@@ -78,10 +80,11 @@ const HomePage: React.FC = () => {
     }
   }, [page, query, debouncedSearch]);
 
-  const handleSearch = (searchQuery: string) => {
-    setQuery(searchQuery);
-    setPage(1); // Reset to page 1 for a new search
-  };
+  // const handleSearch = (searchQuery: string) => {
+  //   // Set query using Zustand store
+  //   useNavigationStore.getState().setQuery(searchQuery);
+  //   setPage(1);
+  // };
 
   return (
     <div className="min-h-screen bg-[#ecedf2] text-gray-900 dark:bg-[#1c1d25] dark:text-gray-100">
@@ -95,7 +98,7 @@ const HomePage: React.FC = () => {
           </div>
 
           <div className="max-w-3xl mx-auto">
-            <SearchBar onSearch={handleSearch} />
+            <SearchBar />
           </div>
         </div>
       </div>

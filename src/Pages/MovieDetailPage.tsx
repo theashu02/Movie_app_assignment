@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getMovieDetails } from "../api/movieApi";
-import DotLineLoader from "../components/DotLineLoader";
+import DotLineLoader from "./Loaders/DotLineLoader";
 
 interface Movie {
   Title: string;
@@ -69,7 +69,7 @@ const MovieDetailPage: React.FC = () => {
           className="w-full md:w-1/3 h-auto object-cover rounded-lg mb-4 md:mb-0 md:mr-6"
         />
         <div>
-          <h1 className="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">
+          <h1 className="text-3xl poppins-bold mb-4 text-gray-900 dark:text-gray-100">
             {movie.Title}
           </h1>
           <p className="text-gray-600 dark:text-gray-400 mb-2">
