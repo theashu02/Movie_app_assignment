@@ -34,7 +34,7 @@
 // const url = "http://www.omdbapi.com/?s=Batman&page=4&apikey=c7a1fd85";
 
 const str = "c7a1fd85";
-const BASE_URL = "http://www.omdbapi.com/";
+const BASE_URL = "https://www.omdbapi.com/";
 
 export const searchMovies = async (query: string, page: number) => {
   try {
