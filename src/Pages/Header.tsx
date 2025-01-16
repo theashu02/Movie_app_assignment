@@ -7,8 +7,6 @@ import { RiMovie2AiLine } from "react-icons/ri";
 import { MdOutlineFiberNew } from "react-icons/md";
 import useNavigationStore from "../store/useNavigationStore";
 
-
-// const Header: React.FC<HeaderProps> = ({ onNavigationClick }) => {
 const Header = () => {
   const setQuery = useNavigationStore((state) => state.setQuery);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +22,6 @@ const Header = () => {
     <header className="bg-gradient-to-r bg-[#d6d8e1] text-gray-800 shadow-lg dark:from-gray-800 dark:to-gray-900 sticky top-0 z-50 dark:text-gray-200">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          {/* Logo Section */}
           <a
             href="/"
             className="flex items-center space-x-2 text-2xl font-bold"
