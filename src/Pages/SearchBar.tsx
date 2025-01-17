@@ -15,7 +15,11 @@ const SearchBar: React.FC = () => {
   };
 
   const handleClear = () => {
-    setQuery("");
+    // console.log("clicked");
+    setQuery("movie");
+    setTimeout(() => {
+      setQuery("");
+    }, 800);
   };
   //handling scroll behaviour
   const handleScroll = () => {
