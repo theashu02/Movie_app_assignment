@@ -1,15 +1,16 @@
 // const url = "http://www.omdbapi.com/?s=Batman&page=4&apikey";
-const str = "c7a1fd85";
+// const str = "c7a1fd85";
+const str = "6160503e";
 const BASE_URL = "https://www.omdbapi.com/";
 
 export const searchMovies = async (query: string, page: number) => {
   try {
-    const cacheKey = `${query}_page_${page}`; // Unique key for each search query and page
+    const cacheKey = `${query}_page_${page}`;
     const cachedData = localStorage.getItem(cacheKey);
 
     if (cachedData) {
       console.log("Using cached data for query:", query);
-      return JSON.parse(cachedData); // Return cached data if available
+      return JSON.parse(cachedData);
     }
 
     const response = await fetch(
@@ -35,14 +36,13 @@ export const searchMovies = async (query: string, page: number) => {
 
 export const getMovieDetails = async (id: string) => {
   try {
-    const cacheKey = `${id}_details`; // Unique key for movie details
+    const cacheKey = `${id}_details`;
     const cachedData = localStorage.getItem(cacheKey);
 
     if (cachedData) {
       console.log("Using cached data for movie details ", id);
-      return JSON.parse(cachedData); // Return cached data if available
+      return JSON.parse(cachedData);
     }
-
     const response = await fetch(`${BASE_URL}?apikey=${str}&i=${id}`);
     if (!response.ok) {
       throw new Error("Failed to fetch movie details");

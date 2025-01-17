@@ -1,4 +1,4 @@
-import {create} from "zustand";
+import { create } from "zustand";
 
 interface NavigationState {
   query: string;
@@ -7,7 +7,7 @@ interface NavigationState {
 
 const useNavigationStore = create<NavigationState>((set) => ({
   query: "",
-  setQuery: (query) => set({ query }),
+  setQuery: (query: string) => set({ query }),
 }));
 
 export default useNavigationStore;

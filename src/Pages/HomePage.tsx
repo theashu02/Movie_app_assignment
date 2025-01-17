@@ -25,11 +25,9 @@ const HomePage: React.FC = () => {
         setHasMore(false);
         return;
       }
-
       setLoading(true);
       setError(null);
       setHasSearched(true);
-
       try {
         const results = await searchMovies(searchQuery, searchPage);
         setMovies((prevMovies) =>
@@ -64,7 +62,6 @@ const HomePage: React.FC = () => {
         setPage((prevPage) => prevPage + 1);
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [loading, hasMore]);
@@ -79,12 +76,6 @@ const HomePage: React.FC = () => {
       debouncedSearch(query, page);
     }
   }, [page, query, debouncedSearch]);
-
-  // const handleSearch = (searchQuery: string) => {
-  //   // Set query using Zustand store
-  //   useNavigationStore.getState().setQuery(searchQuery);
-  //   setPage(1);
-  // };
 
   return (
     <div className="min-h-screen bg-[#ecedf2] text-gray-900 dark:bg-[#1c1d25] dark:text-gray-100">
