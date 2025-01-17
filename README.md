@@ -1,50 +1,65 @@
-# React + TypeScript + Vite
+# 🎥 SimpL Movie
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern movie application built with **React + Vite + TypeScript**, featuring a sleek UI, theme toggling, and efficient client-side caching. This application uses the **OMDb API** to fetch movie data and provides a responsive design for all devices.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- **Shadcn UI**: Beautiful and responsive UI components.
+- **Toggle Theme**: Switch between light and dark modes effortlessly.
+- **Custom Web Series API**: Fetch data for web series in addition to movies.
+- **LocalStorage Caching(Client-Side Caching)**: Efficient client-side caching for faster load times. 
+- **Infinite Scroll**: Implemented infinite scroll feature.
+- **Custom Loaders**: Two unique loading animations for a better user experience.
+- **Responsive Design**: Works seamlessly on mobile, tablet, iPad, and laptop devices.
+- **Year Filter**: Filter movie cards by release year.
+- **404 Page**: Custom 404 page for invalid routes.
+- **Efficient Routing**: Smooth and optimized routing using React Router.
+- **Modern UI**: Attractive and smooth user interface powered by Shadcn UI.
+- **Clear Search Added**: Added the clear search button.
+- **Animation and Effects**:- Added small animation and effects.
+- **API Error-handing**:- All edge cases are added and API error handle correctly.
+---
+**Live Link**: ```https://simplmovie.vercel.app/```
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 🛠️ Setup Instructions
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/theashu02/Movie_app_assignment
+   cd movie-app
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+    Install dependencies:
+    yarn install
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+    Run the application:
+    yarn dev
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+    Open the application:
+    Visit http://localhost:5173 in your browser.
+
+🔗 API Reference
+
+This application uses the OMDb API to fetch movie and web series data.
+API Documentation: **http://www.omdbapi.com/**
+
+    React: A JavaScript library for building user interfaces.
+
+    Vite: A fast and modern build tool.
+
+    TypeScript: A typed superset of JavaScript for better development.
+
+    Shadcn UI: A utility-first CSS framework for building beautiful UIs.
+
+    LocalStorage: For client-side caching and persistent data storage.
+
+    React Router: For efficient routing and navigation.
+## Future improvments
+- Add more animation and effects.
+- Add more filters like (Tittle, IMDB etc..)
+- Add Login/Signup.
+- Add More Themes option.
+- Add recommendation system.
